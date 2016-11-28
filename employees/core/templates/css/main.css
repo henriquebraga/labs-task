@@ -1,0 +1,22 @@
+
+.labs-blue {
+    background-color: #1a6db6;
+}
+
+#luiza-logo{
+    background-image: url('../../static/img/logo.png');
+    width: 200px;
+    height: 200px;
+    margin-right: 0.5em;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space:nowrap;
+    z-index: 999999;
+}
+
+.menu-fix {
+    margin-top: 100px;
+}

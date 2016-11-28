@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 
-class HomeTest(TestCase):
+class IndexViewTest(TestCase):
     """Tests for index page."""
 
     def setUp(self):
@@ -14,3 +14,6 @@ class HomeTest(TestCase):
     def test_template(self):
         """Response must use template index.html."""
         self.assertTemplateUsed(self.resp, 'index.html')
+
+
+
