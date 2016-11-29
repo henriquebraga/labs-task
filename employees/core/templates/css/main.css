@@ -5,8 +5,9 @@
 
 #luiza-logo{
     background-image: url('../../static/img/logo.png');
-    width: 200px;
-    height: 200px;
+    background: no-repeat;
+    width: 20px;
+    height: 20px;
     margin-right: 0.5em;
     display: block;
     text-decoration: none;

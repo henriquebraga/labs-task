@@ -22,6 +22,4 @@ from .core import views
 urlpatterns = [
     url(r'', include('employees.core.urls', namespace='core')),
     url(r'^admin/', admin.site.urls),
-    #url(r'^$', views.index),
-    #url(r'^$', include('employees.core.urls', namespace='core'))
 ]

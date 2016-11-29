@@ -15,5 +15,18 @@ class IndexViewTest(TestCase):
         """Response must use template index.html."""
         self.assertTemplateUsed(self.resp, 'index.html')
 
+class IndexNotFoundTest(TestCase):
+    """Tests for invalid page."""
+
+    def setUp(self):
+        self.resp = self.client.get('/anything')
+
+    def test_get(self):
+        """GET must return status code 404."""
+        self.assertEqual(404, self.resp.status_code)
+
+    def test_template(self):
+        self.assertTemplateUsed(self.resp, '404.html')
+
 
 

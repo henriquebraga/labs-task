@@ -19,3 +19,4 @@ class EmployeeModelTest(TestCase):
 
     def test_str(self):
         self.assertEqual('Henrique Braga', str(self.obj))
+

@@ -1,9 +1,9 @@
 
 
 from django.test import TestCase
-from rest_framework.test import APIRequestFactory, CoreAPIClient
-
 from employees.core.models import Employee
+from django.shortcuts import resolve_url as r
+
 from ..tests.data import EMPLOYEE_REGISTRY
 
 class EmployeeAPITests(TestCase):
@@ -11,7 +11,7 @@ class EmployeeAPITests(TestCase):
 
     def setUp(self):
         self.obj = Employee.objects.create(**EMPLOYEE_REGISTRY)
-        self.resp = self.client.get('/employees/')
+        self.resp = self.client.get(r('core:employees-api'))
 
     def test_get(self):
         """Must return status code 200."""
@@ -33,4 +33,10 @@ class EmployeeAPITests(TestCase):
                                  list(self.resp.data[0].values())
                                  )
 
+
+class EmployeesNotFound(TestCase):
+
+    def test_not_found(self):
+        resp = self.client.get('/employy/')
+        self.assertEqual(404, resp.status_code)
 
